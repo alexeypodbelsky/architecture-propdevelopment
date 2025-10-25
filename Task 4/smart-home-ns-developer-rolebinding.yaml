@@ -1,0 +1,13 @@
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+    metadata:
+      name: smart-home-ns-developer-binding
+      namespace: smart-home
+    subjects:
+    - kind: Group
+      name: smart_home_developers_team
+      apiGroup: rbac.authorization.k8s.io
+    roleRef:
+      kind: Role
+      name: smart-home-ns-developer
+      apiGroup: rbac.authorization.k8s.io

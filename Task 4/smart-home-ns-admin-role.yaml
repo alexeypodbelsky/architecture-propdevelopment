@@ -1,0 +1,10 @@
+    apiVersion: rbac.authorization.k8s.io/v1
+    kind: Role
+    metadata:
+      name: smart-home-ns-admin
+      namespace: smart-home
+    rules:
+    - apiGroups: ["", "apps", "extensions"]
+      resources: ["pods", "services", "deployments", "configmaps", "secrets", "ingresses"]
+      verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+    
